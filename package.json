@@ -2,20 +2,51 @@
   "name": "@todo-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many -t serve --projects=frontend,backend --parallel=2",
+    "dev:frontend": "nx serve frontend",
+    "dev:backend": "nx serve backend",
+    "build": "nx run-many -t build --all",
+    "build:frontend": "nx build frontend",
+    "build:backend": "nx build backend",
+    "test": "nx run-many -t test --all",
+    "test:frontend": "nx test frontend",
+    "test:backend": "nx test backend",
+    "lint": "nx run-many -t lint --all",
+    "graph": "nx graph"
+  },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
   "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@nx/eslint": "22.0.2",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/jest": "22.0.2",
     "@nx/js": "22.0.2",
+    "@nx/nest": "^22.0.2",
+    "@nx/node": "22.0.2",
+    "@nx/react": "^22.0.2",
+    "@nx/vite": "^22.0.2",
+    "@nx/web": "22.0.2",
+    "@nx/webpack": "22.0.2",
     "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
+    "@swc/cli": "~0.6.0",
     "@swc/helpers": "~0.5.11",
+    "@types/node": "20.19.9",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-import": "2.31.0",
+    "jiti": "2.4.2",
     "nx": "22.0.2",
     "prettier": "^2.6.2",
-    "tslib": "^2.3.0",
-    "typescript": "~5.9.2"
+    "ts-node": "10.9.1",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.40.0"
   },
   "workspaces": [
-    "packages/*"
+    "apps/*",
+    "libs/*"
   ]
 }
